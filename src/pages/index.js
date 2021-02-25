@@ -41,9 +41,11 @@ class Index extends React.Component {
             <div className="spotlight">
               <div className="content">
                 <header className="major">
-                  <h2>No Contract Project</h2>
-                </header>
-                <p>NoContract (NoCon) is a DAO (Decentralised Autonomous Organisation) and gonverned by the community of stakeholders. This means NoCon is:</p>
+                  <h2>What is NoContract?</h2>
+                            </header>
+                            <p>NoContract (NoCon) is a project to replace real-world physical contracts with Smart Ones!</p>
+                            <p>We remove “trusted middle-man” from the traditional contracts, allowing parties to interact directly over smart contracts in a democratic environment.</p>
+                            <P>NoCon is DAO (Decentralised Autonomous Organisation), gonverned by a community of stakeholders. This means NoCon is:</p>
                 <ul>
                 <li>Decentralised: Not governed by one single, centralised entit</li>
                 <li>Autonomous: NoCon can automatically execute operations on its own without any intervention.</li>
