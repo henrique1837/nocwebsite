@@ -41,9 +41,9 @@ class Index extends React.Component {
             <div className="spotlight">
               <div className="content">
                 <header className="major">
-                  <h2>NoCon</h2>
+                  <h2>No Contract Project</h2>
                 </header>
-                <p>NoCon is a DAO (Decentralised Autonomous Organisation) and gonverned by the community of stakeholders. This means NoCon is:</p>
+                <p>NoContract (NoCon) is a DAO (Decentralised Autonomous Organisation) and gonverned by the community of stakeholders. This means NoCon is:</p>
                 <ul>
                 <li>Decentralised: Not governed by one single, centralised entit</li>
                 <li>Autonomous: NoCon can automatically execute operations on its own without any intervention.</li>
