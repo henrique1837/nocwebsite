@@ -42,17 +42,17 @@ class Index extends React.Component {
               <div className="content">
                 <header className="major">
                   <h2>What is NoContract?</h2>
-                            </header>
-                            <p>NoContract (NoCon) is a project to replace real-world physical contracts with Smart Ones!</p>
-                            <p>We remove “trusted middle-man” from the traditional contracts, allowing parties to interact directly over smart contracts in a democratic environment.</p>
-                            <P>NoCon is DAO (Decentralised Autonomous Organisation), gonverned by a community of stakeholders. This means NoCon is:</p>
+                </header> 
+                            <p> NoContract (NoCon) is a project to replace real-world physical contracts with Smart Ones!!!</p>
+                            <p>We remove 'trusted middle-man' from the traditional contracts, allowing parties to interact directly over smart contracts in a democratic environment.</p>
+                            <p>NoCon is DAO (Decentralised Autonomous Organisation), gonverned by a community of stakeholders. This means NoCon is:</p>
                 <ul>
-                <li>Decentralised: Not governed by one single, centralised entit</li>
+                <li>Decentralised: Not governed by one single, centralised entity</li>
                 <li>Autonomous: NoCon can automatically execute operations on its own without any intervention.</li>
                 <li>Organisation: NoCon is governed by its own predetermined rules, like an organization. The rules to govern the organisation is determined by voting, and the majority will decide the future direction of the organisation.</li>
 
                 </ul>
-                <p>DAO can grow by itself without depending on its creator(s). We are a democracy!</p>
+                            <p>DAO can grow by itself without depending on its creator(s). <strong> We are a democracy! </strong> </p>
                 {
                   /*
                   <ul className="actions">
@@ -71,31 +71,31 @@ class Index extends React.Component {
             </div>
           </section>
 
+
           <section id="first" className="main special">
             <header className="major">
-              <h2>Informations</h2>
+              <h2>Key Principles</h2>
             </header>
             <ul className="features">
               <li>
                 <span className="icon major style1 fa-code"></span>
-                <h3>Fully transparent</h3>
+                <h3>Fully Transparent</h3>
                 <p>
-                  Voting and outcomes, compensations, token distribution, future direction to name a few.
+                  Voting and outcomes, compensations, token distribution, future direction. <b> Everything is public knowledge! </b>
                 </p>
               </li>
               <li>
                 <span className="icon major style3 fa-copy"></span>
                 <h3>Governance</h3>
                 <p>
-                  Everyone who holds the NOC tokens owns a stake within the network. As such, they get voting powers in the ecosystem that’s directly proportional to their stake.
+                  Everyone who holds the NOC tokens owns a stake within the network, granting them voting rights in the ecosystem.
                 </p>
               </li>
               <li>
                 <span className="icon major style5 fa-diamond"></span>
-                <h3>Dolor nullam</h3>
+                <h3>Limited Token Supply</h3>
                 <p>
-                  Sed lorem amet ipsum dolor et amet nullam consequat a feugiat
-                  consequat tempus veroeros sed consequat.
+                  So you know your token value woudn't go anywhere but to the Moon!
                 </p>
               </li>
             </ul>
@@ -113,6 +113,49 @@ class Index extends React.Component {
               */
             }
           </section>
+
+          <section id="second" className="main">
+            <header className="major">
+              <h2>NOC Roadmap</h2>
+              </header>
+              <p>
+              We have a long-term vision for NoContract project. However, we only lay-out our short to mid-terms roadmap for two reasons:
+              <br/>
+              1.  given the fast-moving nature of Smart Contracts world, protocols and technologies are progressing in an unprecedented rate; making our long term vision very likely to change; and (more importantly)
+              <br/>
+              2. This project is a DAO! It doesn’t matter what our visions are! After all, it’s the community who will decide about the direction of the project 😊              <br/>
+              </p>
+            
+            <span className="image">
+              <img src={require('../assets/images/Roadmap.png')} alt="" width='100%'/>
+            </span>
+
+            <div className="content">
+            <h3>Steps</h3>
+            <ul style={{textAlign:'left'}}>
+              <li> <b>PoC</b>  – create and test shell of the contract and all functions (Approve, Transfer, Receive..),  decide about protocol, DAO Governance code</li>
+              <li> <b>MVP</b>  – build and test the MVP including DAO app, create and lock tokens, create contracts in TestNet (will be deployed to MainNet), first use-case = contract to buy/sell goods & services (think distributed eBay!) </li>
+              <li><b>Audit</b> the code and smart contract security – make sure it’s watertight mate!</li>
+              <li>List the initial tokens in PancakeSwap </li>
+              <li><b>Into the wild (aka Go-live)!</b></li>
+            </ul>
+            <h3>Roadmap post go-live</h3>
+
+            <ul style={{textAlign:'left'}}>
+              <li><b>Contract Templates</b> - Pre defined contract templates to choose from such as bartering contract, care sales contract, insurance, employment etc.</li>
+              <li><b>Dynamic Terms of Contract</b> - The parties can define terms of the contract like # of NOC tokens to stake</li>
+              <li><b>User Defined Templates</b>: Community can create templates for others to use or even sell the template in the marketplace</li>
+              <li><b>Use Collaterial</b> instead of fiat to buy/borrow NOC tokens and stake them</li>
+              <li><b>Borrow NOC</b> - others can stake their tokens as collateral for your trade, and you pay interest to them while the contract is yet not approved by both parties</li>
+            </ul>
+
+            </div>
+ 
+          </section>
+
+
+
+
 
           <section id="second" className="main special">
             <header className="major">
