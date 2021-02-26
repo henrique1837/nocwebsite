@@ -124,7 +124,7 @@ class Index extends React.Component {
               1.  given the fast-moving nature of Smart Contracts world, protocols and technologies are progressing in an unprecedented rate; making our long term vision very likely to change; and (more importantly)
               <br/>
               2. This project is a DAO! It doesn’t matter what our visions are! After all, it’s the community who will decide about the direction of the project 😊              <br/>
-              </p>
+              </p>  
             
             <span className="image">
               <img src={require('../assets/images/Roadmap.png')} alt="" width='100%'/>
