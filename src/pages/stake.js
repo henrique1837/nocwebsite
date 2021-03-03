@@ -4,8 +4,9 @@ import Web3 from 'web3'
 import Layout from '../components/layout'
 import HeaderGeneric from '../components/HeaderGeneric'
 import Nav from '../components/NavPage'
+
 import pic04 from '../assets/images/pic04.jpg'
-import NOCSELLER from '../assets/contracts/NOCSeller.json'
+import NOCSTAKER from '../assets/contracts/NOCStaker.json'
 import NOC from '../assets/contracts/NOC.json'
 
 class Generic extends React.Component {
@@ -16,7 +17,7 @@ class Generic extends React.Component {
 
   constructor(props){
     super(props);
-    this.buy = this.buy.bind(this);
+    this.stake = this.stake.bind(this);
     this.initWeb3 = this.initWeb3.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
   }
@@ -45,14 +46,10 @@ class Generic extends React.Component {
     })
   }
 
-  buy = async () => {
+  stake = async () => {
     const web3 = this.state.web3;
     const coinbase = await web3.eth.getCoinbase();
-    await web3.eth.sendTransaction({
-      from: coinbase,
-      to:NOCSELLER.goerli,
-      value:web3.utils.toHex(this.state.total)
-    });
+    await this.state.noc.methods.send(NOCSTAKER.goerli,web3.utils.toHex(this.state.total),[]).send({from: coinbase})
   }
 
   render() {
@@ -60,9 +57,9 @@ class Generic extends React.Component {
     return (
       <Layout>
 
-
         <Helmet title="Generic Page Title" />
         <HeaderGeneric />
+
         <Nav sticky={true} />
 
         <div id="main">
@@ -72,12 +69,17 @@ class Generic extends React.Component {
               this.state.web3 ?
               (
                 <>
-                <h2>Buy NOC tokens</h2>
-                <p>Each NOC token costs 1 xdai</p>
+                {
+                  /*
+                  <span className="image main"><img src={pic04} alt="" /></span>
+                  */
+                }
+                <h2>Stake NOC tokens</h2>
+                <p>Stake NOC tokens to earn fees from escrow and DAO smart contracts</p>
                 <div>
                 <label>Total</label>
                 <input type="text" onChange={this.handleOnChange} name="total" />
-                <button onClick={this.buy}>Buy</button>
+                <button onClick={this.stake}>Stake</button>
                 </div>
                 </>
               ) :
