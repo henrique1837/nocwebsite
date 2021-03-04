@@ -5,32 +5,47 @@ import { Link } from 'gatsby'
 
 const Nav = (props) => (
     <nav id="nav" className={props.sticky ? 'alt' : ''}>
-        <Scrollspy items={ ['intro', 'first', 'second', 'cta'] } currentClassName="is-active" offset={-300}>
+        <Scrollspy items={ ['intro', 'tokenomic', 'incentives', 'principles', 'roadmap', 'team'] } currentClassName="is-active" offset={-300}>
             <li>
                 <Scroll type="id" element="intro">
-                    <a href="#">Introduction</a>
+                    <a href="#">What is NoCon?</a>
                 </Scroll>
             </li>
             <li>
-                <Scroll type="id" element="first">
-                    <a href="#">First Section</a>
+                <Scroll type="id" element="tokenomic">
+                    <a href="#">Tokenomic</a>
                 </Scroll>
-            </li>
+            </li>      
             <li>
-                <Scroll type="id" element="second">
-                    <a href="#">Second Section</a>
+                <Scroll type="id" element="incentives">
+                    <a href="#">Incentives</a>
                 </Scroll>
-            </li>
+            </li>                  
             <li>
-                <Scroll type="id" element="cta">
-                    <a href="#">Get Started</a>
+                <Scroll type="id" element="principles">
+                    <a href="#">Principles</a>
+                </Scroll>
+            </li>          
+            <li>
+                <Scroll type="id" element="roadmap">
+                    <a href="#">Roadmap</a>
+                </Scroll>
+            </li>           
+            <li>
+                <Scroll type="id" element="team">
+                    <a href="#">Team</a>
                 </Scroll>
             </li>
+<<<<<<< Updated upstream
             <li>
               <Link to="/generic">
                 Dapp
               </Link>
             </li>
+=======
+
+
+>>>>>>> Stashed changes
         </Scrollspy>
     </nav>
 )
