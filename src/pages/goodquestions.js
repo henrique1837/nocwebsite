@@ -1,14 +1,30 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-
+import Nav from '../components/NavGeneric'
+import { Waypoint } from 'react-waypoint'
 import Layout from '../components/layout'
 import Header from '../components/Header'
 import pic04 from '../assets/images/faq-logo.png'
-
 import { Link } from 'gatsby'
 
 
 class Generic extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      stickyNav: false,
+    }
+  }
+
+  _handleWaypointEnter = () => {
+    this.setState(() => ({ stickyNav: false }))
+  }
+
+  _handleWaypointLeave = () => {
+    this.setState(() => ({ stickyNav: true }))
+  }
+
 
   componentDidMount = () => {
 	const acc = document.getElementsByClassName("accordion");
@@ -33,6 +49,15 @@ class Generic extends React.Component {
       <Layout>
         <Helmet title="Good Questions!" />
         <Header />
+       
+       
+        <Waypoint
+          onEnter={this._handleWaypointEnter}
+          onLeave={this._handleWaypointLeave}
+        ></Waypoint>
+        <Nav sticky={this.state.stickyNav} />
+
+
         <div id="main">
           <section id="content" className="main">
             <img src={pic04} alt="" width='500px' />

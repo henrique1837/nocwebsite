@@ -37,6 +37,16 @@ const Nav = (props) => (
                 </Scroll>
             </li>
             <li>
+              <Link to="/goodquestions">
+                FAQ
+              </Link>
+            </li>        
+            <li>
+              <Link to="/noconescrow">
+                What's NOC Escrow?
+              </Link>
+            </li>                
+            <li>
               <Link to="/generic">
                 Dapp
               </Link>

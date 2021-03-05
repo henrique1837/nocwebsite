@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-
+import Nav from '../components/NavGeneric'
+import { Waypoint } from 'react-waypoint'
 import Layout from '../components/layout'
 import Header from '../components/Header'
 import pic_escrow from '../assets/images/escrow-icon.png'
@@ -18,12 +19,33 @@ import pic_photo_selling from '../assets/images/photo-selling.png'
 
 
 class Generic extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      stickyNav: false,
+    }
+  }
+
+  _handleWaypointEnter = () => {
+    this.setState(() => ({ stickyNav: false }))
+  }
+
+  _handleWaypointLeave = () => {
+    this.setState(() => ({ stickyNav: true }))
+  }
   render() {
 
     return (
       <Layout>
         <Helmet title="Good Questions!" />
         <Header />
+
+        <Waypoint
+          onEnter={this._handleWaypointEnter}
+          onLeave={this._handleWaypointLeave}
+        ></Waypoint>
+        <Nav sticky={this.state.stickyNav} />
+
         <div id="main">
           <section id="content" className="main">
             <div className="spotlight">
