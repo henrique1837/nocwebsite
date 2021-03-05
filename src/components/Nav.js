@@ -36,16 +36,11 @@ const Nav = (props) => (
                     <a href="#">Team</a>
                 </Scroll>
             </li>
-<<<<<<< Updated upstream
             <li>
               <Link to="/generic">
                 Dapp
               </Link>
             </li>
-=======
-
-
->>>>>>> Stashed changes
         </Scrollspy>
     </nav>
 )
