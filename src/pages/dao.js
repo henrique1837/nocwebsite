@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Web3 from 'web3'
 import Layout from '../components/layout'
-import HeaderGeneric from '../components/HeaderGeneric'
+import HeaderGeneric from '../components/HeaderGeneric';
 import Nav from '../components/NavPage'
 import NOC from '../assets/contracts/NOC.json'
 import NOCDAO from '../assets/contracts/NOCDAO.json'
@@ -94,7 +94,7 @@ class Generic extends React.Component {
       returnValues: res.returnValues
     }
     if(!this.state.events.includes(JSON.stringify(obj))){
-      this.state.events.push(JSON.stringify(obj));
+      this.state.events.unshift(JSON.stringify(obj));
       await this.forceUpdate();
     }
   }

@@ -46,8 +46,10 @@ class Generic extends React.Component {
       nocescrow: nocescrow
     })
 
-    nocescrow.events.OfferCreated({
-      filter: {},
+    noc.events.Sent({
+      filter: {
+        to: NOCESCROW.goerli
+      },
       fromBlock: 0
     },this.handleEvents);
 
@@ -77,7 +79,7 @@ class Generic extends React.Component {
     }
     const res = await ipfs.add(Buffer.from(JSON.stringify(obj)));
     console.log(web3.utils.fromAscii(res[0].hash))
-    await this.state.noc.methods.send(NOCESCROW.goerli,web3.utils.toHex(this.state.total),[web3.utils.fromAscii(res[0].hash)]).send({from: coinbase})
+    await this.state.noc.methods.send(NOCESCROW.goerli,web3.utils.toHex(this.state.total),web3.utils.fromAscii(res[0].hash)).send({from: coinbase})
   }
 
   acceptOffer = async (id,total) => {
@@ -95,7 +97,7 @@ class Generic extends React.Component {
       returnValues: res.returnValues
     }
     if(!this.state.events.includes(JSON.stringify(obj))){
-      this.state.events.push(JSON.stringify(obj));
+      this.state.events.unshift(JSON.stringify(obj));
       await this.forceUpdate();
     }
   }
@@ -143,13 +145,14 @@ class Generic extends React.Component {
                       {
                         this.state.events.map(string => {
                           const obj = JSON.parse(string);
-                          const hash = that.state.web3.utils.toAscii(obj.returnValues.id);
+                          console.log(obj)
+                          const hash = that.state.web3.utils.toAscii(obj.returnValues.data);
                           return(
                             <div>
                               <hr />
                               <p>From: {obj.returnValues.from}</p>
                               <p>Total NOC: {obj.returnValues.amount/10**18}</p>
-                              <p>Id: {obj.returnValues.id}</p>
+                              <p>Id: {obj.returnValues.data}</p>
                               <p>Offer: <a href={`https://ipfs.io/ipfs/${hash}`} target="_blank">{hash}</a></p>
                               <p>{(new Date(obj.timestamp*1000)).toUTCString()}</p>
                             </div>
